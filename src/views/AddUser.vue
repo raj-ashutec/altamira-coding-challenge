@@ -28,7 +28,6 @@
                           :error-messages="emailErrors"
                           label="Email"
                           outlined
-                          @input="$v.form.email.$touch()"
                           @blur="$v.form.email.$touch()"
                         ></v-text-field>
                       </v-col>
@@ -138,19 +137,19 @@ export default {
     firstNameErrors() {
       const errors = [];
       if (!this.$v.form.firstName.$dirty) return errors;
-      !this.$v.form.firstName.required && errors.push("User name is required.");
+      !this.$v.form.firstName.required && errors.push("First name is required.");
       return errors;
     },
     lastNameErrors() {
       const errors = [];
       if (!this.$v.form.lastName.$dirty) return errors;
-      !this.$v.form.lastName.required && errors.push("User name is required.");
+      !this.$v.form.lastName.required && errors.push("Last name is required.");
       return errors;
     },
     roleErrors() {
       const errors = [];
       if (!this.$v.form.role.$dirty) return errors;
-      !this.$v.form.role.required && errors.push("User name is required.");
+      !this.$v.form.role.required && errors.push("Role is required.");
       return errors;
     },
   },
