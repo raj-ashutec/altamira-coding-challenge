@@ -76,10 +76,12 @@
                 <v-icon class="profile-img"> mdi-image-filter-hdr </v-icon>
               </div>
               <div>
-                <v-btn depressed class="user-btn user-btn-color"> Select Image </v-btn>
+                <v-btn depressed class="user-btn user-btn-color">
+                  Select Image
+                </v-btn>
               </div>
             </div>
-            <v-snackbar v-model="showSnackbar" color="success">
+            <v-snackbar v-model="showSnackbar" color="success" right>
               <v-icon color="white">mdi-check</v-icon>
               <span class="snack-bar-text"> Added Successfully! </span>
             </v-snackbar>
@@ -245,7 +247,7 @@ export default {
   font-weight: 700 !important;
 }
 .user-details-title {
-  font-size: 36px;
+  font-size: 32px;
   color: #212121;
   font-weight: 700;
   text-align: left;

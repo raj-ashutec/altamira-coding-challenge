@@ -256,7 +256,7 @@ export default {
 }
 .user-find-title {
   display: flex;
-  font-size: 36px;
+  font-size: 32px;
   color: #212121;
   font-weight: 700;
   justify-content: space-between;

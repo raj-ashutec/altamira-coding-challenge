@@ -10,9 +10,7 @@
           style="background-color: #7400b8"
         >
           <v-list dense>
-            <v-list-item two-line class="admin-side-menu-logo">
-              <v-icon class="menu-icon"> mdi-menu </v-icon>
-            </v-list-item>
+            <v-list-item two-line class="admin-side-menu-logo"> </v-list-item>
 
             <v-list-item-group class="admin-side-menu-list">
               <v-list-item
