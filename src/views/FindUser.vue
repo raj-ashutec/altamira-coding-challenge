@@ -32,10 +32,17 @@
                 class="elevation-1"
               >
                 <template v-slot:[`item.actions`]="{ item }">
-                  <v-icon small class="mr-2" @click="editItem(item)">
+                  <v-icon
+                    small
+                    class="mr-2"
+                    @click="editItem(item)"
+                    style="color: purple"
+                  >
                     mdi-pencil
                   </v-icon>
-                  <v-icon small @click="deleteItem(item)"> mdi-delete </v-icon>
+                  <v-icon small @click="deleteItem(item)" style="color: red">
+                    mdi-delete
+                  </v-icon>
                 </template>
               </v-data-table>
             </v-card>
@@ -219,7 +226,8 @@ export default {
 
 <style scoped>
 .add-icon {
-  font-size: 55px !important;
+  font-size: 50px !important;
+  color: #7400b8 !important;
 }
 .btn-container {
   text-align: left;
@@ -249,7 +257,8 @@ export default {
 .user-find-title {
   display: flex;
   font-size: 36px;
-  color: #bdb3b3;
+  color: #212121;
+  font-weight: 700;
   justify-content: space-between;
   margin-bottom: 15px;
 }

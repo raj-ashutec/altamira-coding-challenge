@@ -38,8 +38,6 @@
                           :error-messages="firstNameErrors"
                           label="First Name"
                           outlined
-                          @input="$v.form.firstName.$touch()"
-                          @blur="$v.form.firstName.$touch()"
                         ></v-text-field>
                       </v-col>
 
@@ -49,8 +47,6 @@
                           :error-messages="lastNameErrors"
                           label="Last Name"
                           outlined
-                          @input="$v.form.lastName.$touch()"
-                          @blur="$v.form.lastName.$touch()"
                         ></v-text-field>
                       </v-col>
                       <v-col cols="12" sm="6">
@@ -60,8 +56,6 @@
                           :items="items"
                           label="Role"
                           outlined
-                          @input="$v.form.role.$touch()"
-                          @blur="$v.form.role.$touch()"
                           attach
                         ></v-select>
                       </v-col>
@@ -82,7 +76,7 @@
                 <v-icon class="profile-img"> mdi-image-filter-hdr </v-icon>
               </div>
               <div>
-                <v-btn depressed class="user-btn"> Select Image </v-btn>
+                <v-btn depressed class="user-btn user-btn-color"> Select Image </v-btn>
               </div>
             </div>
             <v-snackbar v-model="showSnackbar" color="success">
@@ -93,7 +87,9 @@
 
           <v-divider />
           <div class="btn-container">
-            <v-btn depressed class="user-btn" @click="submit"> Add user </v-btn>
+            <v-btn depressed class="user-btn user-btn-color" @click="submit">
+              Add user
+            </v-btn>
             <v-btn depressed class="user-btn" @click="cancel"> Cancel </v-btn>
           </div>
         </div>
@@ -243,9 +239,15 @@ export default {
 .user-form {
   padding: 10px;
 }
+.user-btn-color {
+  background-color: #7400b8 !important;
+  color: white !important;
+  font-weight: 700 !important;
+}
 .user-details-title {
   font-size: 36px;
-  color: #bdb3b3;
+  color: #212121;
+  font-weight: 700;
   text-align: left;
 }
 </style>

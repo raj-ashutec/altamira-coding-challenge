@@ -3,7 +3,12 @@
     <div class="user-nav-bar">
       <!-- Desktop Side Menu -->
       <v-card class="mx-auto admin-side-menu" height="100vh" width="65">
-        <v-navigation-drawer absolute permanent width="100%">
+        <v-navigation-drawer
+          absolute
+          permanent
+          width="100%"
+          style="background-color: #7400b8"
+        >
           <v-list dense>
             <v-list-item two-line class="admin-side-menu-logo">
               <v-icon class="menu-icon"> mdi-menu </v-icon>
@@ -40,8 +45,6 @@
         <div>
           <v-card color="grey lighten-4" flat tile>
             <v-toolbar min-height="70" class="admin-menu-header">
-              <v-icon> mdi-image-filter-hdr </v-icon>
-
               <v-spacer></v-spacer>
               <div class="user-name-text">
                 <h3>RENEE MCKELVEY</h3>
@@ -90,6 +93,9 @@ export default {
 <style>
 .admin-menu-header {
   align-items: center;
+  border-bottom: 2px solid #c5c5c5 !important;
+  background: #f9f9f9 !important;
+  box-shadow: none !important;
 }
 .admin-side-menu {
   position: absolute;
@@ -110,6 +116,7 @@ export default {
   padding: 10px 0;
 }
 .admin-side-menu-icon {
+  color: white !important;
   font-size: 30px !important;
 }
 .admin-side-menu-title {
@@ -118,6 +125,7 @@ export default {
   font-weight: 600 !important;
 }
 .menu-icon {
+  color: white !important;
   font-size: 35px !important;
 }
 .side-menu-list-item {
