@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div style="height: 100%">
     <div class="user-nav-bar">
       <!-- Desktop Side Menu -->
-      <v-card class="mx-auto admin-side-menu" height="100vh" width="65">
+      <v-card class="mx-auto admin-side-menu" height="100%" width="65">
         <v-navigation-drawer
           absolute
           permanent
@@ -137,6 +137,7 @@ export default {
 }
 .user-nav-bar {
   display: flex;
+  height: 100% !important;
 }
 .user-container-top {
   width: 100%;
