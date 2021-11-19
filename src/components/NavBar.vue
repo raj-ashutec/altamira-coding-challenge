@@ -17,12 +17,19 @@
                 link
                 class="side-menu-list-item"
               >
-                <v-icon
-                  class="admin-side-menu-icon"
-                  @click="gotoPage(item.value)"
-                >
-                  {{ item.icon }}
-                </v-icon>
+                <v-tooltip right>
+                  <template v-slot:activator="{ on, attrs }">
+                    <v-icon
+                      class="admin-side-menu-icon"
+                      @click="gotoPage(item.value)"
+                      v-bind="attrs"
+                      v-on="on"
+                    >
+                      {{ item.icon }}
+                    </v-icon>
+                  </template>
+                  <span> {{ item.title }}</span>
+                </v-tooltip>
               </v-list-item>
             </v-list-item-group>
           </v-list>
@@ -64,8 +71,8 @@ export default {
         { title: "Database", icon: "mdi-database", value: 2 },
         { title: "Graph", icon: "mdi-chart-areaspline", value: 3 },
         { title: "Upload", icon: "mdi-inbox-arrow-up", value: 4 },
-        { title: "accountSwitch", icon: "mdi-account-switch", value: 5 },
-        { title: "settings", icon: "mdi-cog", value: 6 },
+        { title: "Account Switch", icon: "mdi-account-switch", value: 5 },
+        { title: "Settings", icon: "mdi-cog", value: 6 },
       ],
     };
   },

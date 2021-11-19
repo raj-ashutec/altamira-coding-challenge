@@ -85,6 +85,10 @@
                 <v-btn depressed class="user-btn"> Select Image </v-btn>
               </div>
             </div>
+            <v-snackbar v-model="showSnackbar" color="success">
+              <v-icon color="white">mdi-check</v-icon>
+              <span class="snack-bar-text"> Added Successfully! </span>
+            </v-snackbar>
           </div>
 
           <v-divider />
@@ -137,7 +141,8 @@ export default {
     firstNameErrors() {
       const errors = [];
       if (!this.$v.form.firstName.$dirty) return errors;
-      !this.$v.form.firstName.required && errors.push("First name is required.");
+      !this.$v.form.firstName.required &&
+        errors.push("First name is required.");
       return errors;
     },
     lastNameErrors() {
@@ -163,6 +168,7 @@ export default {
         lastName: "",
         role: "",
       },
+      showSnackbar: false,
       isEmail: false,
       items: ["Admin", "User"],
     };
@@ -171,13 +177,14 @@ export default {
   methods: {
     submit() {
       this.$v.form.$touch();
-      if (!this.$v.$invalid) {
+      if (!this.$v.form.$invalid) {
         var fromStorage = localStorage.getItem("allUser") || "[]";
         var allUserData = JSON.parse(fromStorage);
         allUserData.push(this.form);
         localStorage.setItem("allUser", JSON.stringify(allUserData));
+        this.showSnackbar = !this.showSnackbar;
+        this.cancel();
       }
-      this.cancel();
     },
     cancel() {
       this.$v.form.$reset();
@@ -224,6 +231,9 @@ export default {
 .new-user-container {
   margin-right: 2%;
   width: 70%;
+}
+.snack-bar-text {
+  font-size: 16px;
 }
 .user-btn {
   padding: 25px 35px !important;
